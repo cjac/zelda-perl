@@ -39,7 +39,7 @@ sub read_file {
     open(my $fh, q{<}, $filename) or die "couldn't open $filename: $!";
     my($content) = eval { local undef $/; <$fh> };
     close($fh);
-    return( $coder->decode($content) )
+    return( $coder->decode($content) );
 }
 
 sub print_obj {
@@ -54,12 +54,12 @@ sub print_obj {
 }
 
 my $heart = read_file('heart.json');
-my $star = read_file('star.json');
+my $star  = read_file('star.json');
 
 print_obj(0,0,$heart);
 print_obj(15,0,$heart);
 print_obj(30,0,$heart);
 
-print_obj(40,0,$star);
+print_obj(45,0,$star);
 
 sleep 30;
